@@ -1,6 +1,5 @@
 import { getWindowDimensions } from "@/utils/domUtils";
 import React, { useEffect, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
 import { Vortex } from "../UI/vortex";
 import { FlipWords } from "../UI/flip-words";
 
@@ -42,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({}) => {
         className="flex items-center px-2 md:px-10 py-4 w-full h-full"
       >
         <div className="h-[40rem] flex items-center px-4">
-          <div className="text-[90px] mx-auto font-normal text-[white] text-center">
+          <div className="text-[30px] md:text-[60px] lg:text-[90px] mx-auto font-normal text-[white] text-center transition-all ease-in-out">
             Capitalizing on your ideas with
             <FlipWords fadeColor="#BE0CEC" words={words} />
           </div>
