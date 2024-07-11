@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --magenta: #b20fda;
+  --dark-blue: #171d3a;
+}
+
+* {
+  font-family: "Overpass Mono", monospace;
+  font-optical-sizing: auto;
+}
+
+*::-moz-selection {
+  /* Code for Firefox */
+  color: var(--dark-blue);
+  background: var(--magenta);
+}
+
+*::selection {
+  color: var(--dark-blue);
+  background: var(--magenta);
+}
+
+body {
+  background: var(--black);
+}
