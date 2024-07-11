@@ -17,7 +17,7 @@ const HomePage: React.FC<indexProps> = ({}) => {
         )}
       />
       <Hero />
-      {/* <CanvasRevealCard /> */}
+      <CanvasRevealCard />
     </div>
   );
 };
