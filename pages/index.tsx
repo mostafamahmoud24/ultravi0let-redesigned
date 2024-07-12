@@ -2,11 +2,13 @@ import Navbar from "@/components/navbar/Navbar";
 import { cn } from "@/utils/cn";
 import React from "react";
 import dynamic from "next/dynamic";
-import CanvasRevealCard from "@/components/canvasRevealCard/CanvasRevealCard";
 
 interface indexProps {}
 
 const Hero = dynamic(() => import("../components/hero/Hero"), { ssr: false });
+const Services = dynamic(() => import("../components/services/Services"), {
+  ssr: false,
+});
 
 const HomePage: React.FC<indexProps> = ({}) => {
   return (
@@ -17,7 +19,8 @@ const HomePage: React.FC<indexProps> = ({}) => {
         )}
       />
       <Hero />
-      <CanvasRevealCard />
+      <Services />
+      {/* <CanvasRevealCard /> */}
     </div>
   );
 };
