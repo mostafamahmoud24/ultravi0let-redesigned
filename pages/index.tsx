@@ -21,6 +21,9 @@ const Testimonials = dynamic(
     ssr: false,
   }
 );
+const ContactUs = dynamic(() => import("../components/contactUs/ContactUs"), {
+  ssr: false,
+});
 
 const HomePage: React.FC<indexProps> = ({}) => {
   return (
@@ -34,6 +37,7 @@ const HomePage: React.FC<indexProps> = ({}) => {
       <Services />
       <Achievements />
       <Testimonials />
+      <ContactUs />
     </div>
   );
 };
