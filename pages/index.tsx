@@ -9,6 +9,18 @@ const Hero = dynamic(() => import("../components/hero/Hero"), { ssr: false });
 const Services = dynamic(() => import("../components/services/Services"), {
   ssr: false,
 });
+const Achievements = dynamic(
+  () => import("../components/achievements/Achievements"),
+  {
+    ssr: false,
+  }
+);
+const Testimonials = dynamic(
+  () => import("../components/testimonials/Testimonials"),
+  {
+    ssr: false,
+  }
+);
 
 const HomePage: React.FC<indexProps> = ({}) => {
   return (
@@ -20,7 +32,8 @@ const HomePage: React.FC<indexProps> = ({}) => {
       />
       <Hero />
       <Services />
-      {/* <CanvasRevealCard /> */}
+      <Achievements />
+      <Testimonials />
     </div>
   );
 };

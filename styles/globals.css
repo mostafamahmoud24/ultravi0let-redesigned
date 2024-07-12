@@ -25,6 +25,27 @@
   background: var(--magenta);
 }
 
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Hide scroll corner */
+*::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: var(--dark-blue);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-blue);
+}
+
 body {
   background: var(--black);
 }

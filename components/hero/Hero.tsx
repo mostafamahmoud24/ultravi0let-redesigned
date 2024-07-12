@@ -27,7 +27,6 @@ const Hero: React.FC<HeroProps> = ({}) => {
     }
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(windowDimensions?.height);
 
   return (
     <div
