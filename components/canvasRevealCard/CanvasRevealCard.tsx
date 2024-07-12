@@ -38,7 +38,7 @@ We turn ideas into digital dynamite. Let's make waves together."
           icon={
             <div>
               <div className="text-[#BE0CEC] text-[40px]">VIOLET</div>
-              <div className="text-[white] text-[14px]">Come closer!</div>
+              <div className="text-[white] text-[14px]">We wont bite!</div>
             </div>
           }
         >
