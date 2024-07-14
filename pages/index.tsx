@@ -28,6 +28,7 @@ const ContactUs = dynamic(() => import("../components/contactUs/ContactUs"), {
 const HomePage: React.FC<indexProps> = ({}) => {
   return (
     <div>
+      <title>Ultravi0let</title>
       <Navbar
         className={cn(
           "sticky top-0 inset-x-0 max-w-2xl mx-auto z-50 max-w-100 flex bg-black center"
