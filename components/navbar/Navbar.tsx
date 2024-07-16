@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../UI/navbar-menu";
+// import { HoveredLink, Menu, MenuItem, ProductItem } from "../UI/navbar-menu";
 import logo from "@/public/Ultraviolet-logo.png";
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <Image src={logo} alt="logo" width={200} className="m-auto" />
       </div>
 
-      <Menu setActive={setActive}>
+      {/* <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
@@ -60,7 +60,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
             <HoveredLink href="/enterprise">Enterprise</HoveredLink>
           </div>
         </MenuItem>
-      </Menu>
+      </Menu> */}
     </div>
   );
 };
