@@ -25,20 +25,26 @@ export function ContactUsForm() {
         <div className="flex justify-evenly mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Input id="firstname" placeholder="Tyler" type="text" required />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" />
+            <Input id="lastname" placeholder="Durden" type="text" required />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mt-8">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+          <Input
+            id="email"
+            placeholder="projectmayhem@fc.com"
+            type="email"
+            required
+          />
         </LabelInputContainer>
         <LabelInputContainer className="mt-8">
           <Label htmlFor="email">Message</Label>
           <textarea
+            required
             rows={3}
             className={cn(
               `flex w-full border-none bg-gray-50 dark:bg-zinc-800 text-black dark:text-white shadow-input rounded-md px-3 py-2 text-sm  file:border-0 file:bg-transparent 
