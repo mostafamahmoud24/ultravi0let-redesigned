@@ -2,15 +2,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalTrigger,
-} from "./animated-modal";
 
-export function Lamp({ text, modalBody }: { text: string; modalBody: any }) {
+export function Lamp({
+  text,
+  handleOpenModal,
+}: {
+  text: string;
+  handleOpenModal: (opened: boolean) => void;
+}) {
   return (
     <LampContainer>
       <motion.h1
@@ -26,19 +25,15 @@ export function Lamp({ text, modalBody }: { text: string; modalBody: any }) {
         <div className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl">
           {text}
         </div>
-        <Modal>
-          <ModalTrigger className="w-fit h-fit mx-auto mt-8 p-0">
-            <button className="p-[3px] relative w-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
-              <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                Send us a message
-              </div>
-            </button>
-          </ModalTrigger>
-          <ModalBody>
-            <ModalContent>{modalBody}</ModalContent>
-          </ModalBody>
-        </Modal>
+        <button
+          className="p-[3px] relative w-[250px] mt-8 mr-auto ml-auto"
+          onClick={() => handleOpenModal(true)}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+          <div className="px-8 py-2 bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+            Send us a message
+          </div>
+        </button>
       </motion.h1>
     </LampContainer>
   );
