@@ -1,14 +1,35 @@
 "use client";
-import React from "react";
+import { FormEvent } from "react";
 import { Label } from "@/components/UI/label";
 import { Input } from "@/components/UI/input";
 import { cn } from "@/utils/cn";
+import toast from "react-hot-toast";
 
-export function ContactUsForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
+interface ContactUsFormInterface {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  isLoading: boolean;
+  setFirstName: (e: any) => void;
+  setLastName: (e: any) => void;
+  setEmail: (e: any) => void;
+  setMessage: (e: any) => void;
+  submitHandler: any;
+}
+
+export function ContactUsForm({
+  firstName,
+  lastName,
+  email,
+  message,
+  isLoading,
+  setFirstName,
+  setLastName,
+  setEmail,
+  setMessage,
+  submitHandler,
+}: ContactUsFormInterface) {
   return (
     <div
       className="mx-auto rounded-xl md:rounded-2xl p-4 md:p-0 bg-white dark:bg-black overflow-auto"
@@ -21,29 +42,77 @@ export function ContactUsForm() {
         Get one step closer to building your dream website.
       </p>
 
-      <form className="mt-8" onSubmit={handleSubmit}>
+      <form
+        className="mt-8"
+        onSubmit={(e) =>
+          //Trigger Toaster component and call the submit handler
+          toast.promise(
+            submitHandler(e),
+            {
+              loading: "Sending...",
+              success: "Thanks for reaching out",
+              error: "Oops, looks like something went wrong, please try again!",
+            },
+            {
+              success: {
+                duration: 3000,
+              },
+              error: {
+                duration: 4000,
+              },
+            }
+          )
+        }
+      >
         <div className="flex justify-evenly mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" required />
+            <Input
+              id="firstname"
+              name="firstName"
+              placeholder="Tyler"
+              type="text"
+              required
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              disabled={isLoading}
+            />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
-            <Input id="lastname" placeholder="Durden" type="text" required />
+            <Input
+              id="lastname"
+              name="lastName"
+              placeholder="Durden"
+              type="text"
+              required
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              disabled={isLoading}
+            />
           </LabelInputContainer>
         </div>
         <LabelInputContainer className="mt-8">
           <Label htmlFor="email">Email Address</Label>
           <Input
             id="email"
+            name="email"
             placeholder="projectmayhem@fc.com"
             type="email"
             required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={isLoading}
           />
         </LabelInputContainer>
         <LabelInputContainer className="mt-8">
-          <Label htmlFor="email">Message</Label>
+          <Label htmlFor="message">Message</Label>
           <textarea
+            id="message"
+            name="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            disabled={isLoading}
             required
             rows={3}
             className={cn(
@@ -60,7 +129,11 @@ export function ContactUsForm() {
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
-        <button className="p-[3px] relative w-full mt-8" type="submit">
+        <button
+          className="p-[3px] relative w-full mt-8"
+          type="submit"
+          disabled={isLoading}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
           <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
             Fire away &rarr;

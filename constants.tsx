@@ -18,3 +18,6 @@ export const testimonials = [
     title: "CTO, Connect 6",
   },
 ];
+
+// This should be moved to a .env file for security
+export const RESEND_API_KEY = "re_2JN2wsX6_5YaaekN7tfSVAhZ6w96qBdF9";
