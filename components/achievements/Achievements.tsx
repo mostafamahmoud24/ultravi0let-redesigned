@@ -13,6 +13,7 @@ import SectionHeader from "../UI/SectionHeader";
 function Achievements() {
   const content = [
     <CounterCard
+      key="Projects Delivered"
       label="Projects Delivered"
       fromNumber={0}
       toNumber={30}
@@ -20,12 +21,14 @@ function Achievements() {
       icon={<IconLayout size={50} />}
     />,
     <CounterCard
+      key="Countries Worldwide"
       label="Countries Worldwide"
       fromNumber={0}
       toNumber={4}
       icon={<IconWorld size={50} />}
     />,
     <CounterCard
+      key="Satisfied Customers"
       label="Satisfied Customers"
       fromNumber={0}
       toNumber={12}
@@ -33,6 +36,7 @@ function Achievements() {
       icon={<IconMoodCheck size={50} />}
     />,
     <CounterCard
+      key="Missed Deadlines"
       label="Missed Deadlines"
       fromNumber={50}
       toNumber={0}
