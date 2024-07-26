@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.compat.css";
-import Footer from "@/components/footer/Footer";
 import { FollowerPointerCard } from "@/components/UI/following-pointer";
 
 interface indexProps {}
@@ -27,6 +26,9 @@ const Testimonials = dynamic(
   }
 );
 const ContactUs = dynamic(() => import("../components/contactUs/ContactUs"), {
+  ssr: false,
+});
+const Footer = dynamic(() => import("../components/footer/Footer"), {
   ssr: false,
 });
 

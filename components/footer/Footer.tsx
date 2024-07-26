@@ -14,6 +14,7 @@ interface FooterProps {}
 
 interface socialMediaDataModel {
   link: string;
+  name: string;
   icon: ReactElement;
 }
 
@@ -21,37 +22,42 @@ const Footer: React.FC<FooterProps> = ({}) => {
   const socialMediaData = [
     {
       link: "www.facebook.com",
+      name: "facebook",
       icon: <IconBrandFacebookFilled size={30} />,
     },
     {
       link: "www.instagram.com",
+      name: "instagram",
       icon: <IconBrandInstagram size={30} />,
     },
     {
       link: "www.twitter.com",
+      name: "twitter",
       icon: <IconBrandX size={30} />,
     },
     {
       link: "www.linkedin.com",
+      name: "linkedin",
       icon: <IconBrandLinkedin size={30} />,
     },
   ];
   return (
-    <footer className="relative pt-[100px] px-[20px] md:px-[80px] text-slate-400">
-      <div className="block md:flex justify-center md:justify-between">
-        {/* Gradient top border */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent h-[2px] blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px " />
-        <div className="absolute inset-x-80 top-0 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent h-[2px] blur-sm" />
-        <div className="absolute inset-x-80 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px" />
+    <footer className="relative h-[400px] text-slate-400">
+      {/* Gradient top border */}
+      <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent h-[2px] blur-sm" />
+      <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px " />
+      <div className="absolute inset-x-80 top-0 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent h-[2px] blur-sm" />
+      <div className="absolute inset-x-80 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px" />
+      <div className="block md:flex justify-center md:justify-between pt-[80px] w-[90%] mr-auto ml-auto">
         <div className="w-full text-center md:w-[30%] mt-auto mb-auto">
           <Image
             src={logo}
             alt="logo"
+            width={200}
             className="md:mr-0 md:ml-0 mr-auto ml-auto "
           />
           <div className="text-sm md:text-left mt-4 w-[100%] md:w-[80%] md:text-justify text-center mb-[80px] md:mb-0">
-            We turn ideas into digital dynamite. Let's make waves together.
+            {"We turn ideas into digital dynamite. Let's make waves together."}
           </div>
         </div>
         <div className="w-full md:w-[40%] mt-auto mb-auto">
@@ -75,6 +81,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
           <div className="flex justify-between ml-auto mr-auto md:ml-0 md:mr-o w-[50%] md:w-[300px]">
             {socialMediaData.map((item: socialMediaDataModel) => (
               <a
+                key={item.name}
                 href={item.link}
                 target="_blank"
                 className="cursor-none hover:text-cyan-700"
@@ -85,10 +92,11 @@ const Footer: React.FC<FooterProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className="mt-[80px] text-xs mb-[30px] md:mb-[50px] text-center md:text-left">
+      <div className="mt-[80px] text-xs pb-[30px] md:mb-[50px] text-center md:text-left w-[90%] mr-auto ml-auto">
         Copyright © 2024 • Ultravi0let
       </div>
     </footer>
   );
 };
+
 export default Footer;

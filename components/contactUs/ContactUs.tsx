@@ -58,7 +58,7 @@ const ContactUs: React.FC<ContactUsProps> = ({}) => {
   };
 
   return (
-    <div className="pt-[100px]">
+    <div>
       <Lamp text="Gain an unfair advantage" handleOpenModal={handleOpenModal} />
       <Modal isOpen={isOpen} handleClose={() => handleOpenModal(false)}>
         <ContactUsForm
