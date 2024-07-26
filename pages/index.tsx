@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.compat.css";
+import Footer from "@/components/footer/Footer";
+import { FollowerPointerCard } from "@/components/UI/following-pointer";
 
 interface indexProps {}
 
@@ -30,22 +32,25 @@ const ContactUs = dynamic(() => import("../components/contactUs/ContactUs"), {
 
 const HomePage: React.FC<indexProps> = ({}) => {
   return (
-    <div>
-      <title>Ultravi0let</title>
-      <Toaster />
-      <Navbar
-        className={cn(
-          "sticky top-0 inset-x-0 max-w-2xl mx-auto z-50 max-w-100 flex bg-black center"
-        )}
-      />
-      <Hero />
-      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce>
-        <Services />
-      </ScrollAnimation>
-      <Achievements />
-      <Testimonials />
-      <ContactUs />
-    </div>
+    <FollowerPointerCard>
+      <div>
+        <title>Ultravi0let</title>
+        <Toaster />
+        <Navbar
+          className={cn(
+            "sticky top-0 inset-x-0 max-w-2xl mx-auto z-50 max-w-100 flex bg-black center"
+          )}
+        />
+        <Hero />
+        <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce>
+          <Services />
+        </ScrollAnimation>
+        <Achievements />
+        <Testimonials />
+        <ContactUs />
+        <Footer />
+      </div>
+    </FollowerPointerCard>
   );
 };
 export default HomePage;

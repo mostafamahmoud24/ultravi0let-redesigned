@@ -28,7 +28,6 @@ const CloseButton = styled.svg`
   margin-left: auto;
   margin-top: 20px;
   margin-right: 20px;
-  cursor: pointer;
 `;
 
 const modalVariant = {
