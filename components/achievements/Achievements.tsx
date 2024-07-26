@@ -1,5 +1,4 @@
 import React from "react";
-import "./Achievements.css";
 import {
   IconLayout,
   IconWorld,

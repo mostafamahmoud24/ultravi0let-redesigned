@@ -1,5 +1,4 @@
 import React from "react";
-import "./Services.css";
 import { CardGrid } from "../UI/CardGrid";
 import SectionHeader from "../UI/SectionHeader";
 import {

@@ -3,6 +3,8 @@ import { cn } from "@/utils/cn";
 import React from "react";
 import dynamic from "next/dynamic";
 import { Toaster } from "react-hot-toast";
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.compat.css";
 
 interface indexProps {}
 
@@ -37,7 +39,9 @@ const HomePage: React.FC<indexProps> = ({}) => {
         )}
       />
       <Hero />
-      <Services />
+      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce>
+        <Services />
+      </ScrollAnimation>
       <Achievements />
       <Testimonials />
       <ContactUs />

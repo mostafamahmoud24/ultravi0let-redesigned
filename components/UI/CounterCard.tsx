@@ -25,6 +25,8 @@ const CounterCard: React.FC<CounterCardProps> = ({
           end={toNumber}
           duration={4}
           className="text-[40px]"
+          //activates the countup when the component is in viewport
+          enableScrollSpy
         />
         {numberText && <div className="ml-[10px]">{numberText}</div>}
       </div>
