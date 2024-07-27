@@ -85,6 +85,7 @@ const Footer: React.FC<FooterProps> = ({}) => {
                 href={item.link}
                 target="_blank"
                 className="cursor-none hover:text-cyan-700"
+                aria-label={item.name}
               >
                 {item.icon}
               </a>
