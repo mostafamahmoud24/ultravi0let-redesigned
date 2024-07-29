@@ -61,6 +61,7 @@ const Modal = ({
           animate={"isOpen"}
           exit={"exit"}
           variants={modalVariant}
+          className="dark:bg-black"
         >
           <ModalContainer variants={containerVariant} ref={modalRef}>
             <CloseButton
