@@ -7,7 +7,7 @@ interface TestimonialsProps {}
 
 const Testimonials: React.FC<TestimonialsProps> = ({}) => {
   return (
-    <div className="pt-[100px]">
+    <div className="pt-[50px] md:pt-[100px]">
       <SectionHeader
         title="Testimonials"
         description="Don't Just take our word for it, here is what other people think of our services"

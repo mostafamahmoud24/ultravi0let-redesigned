@@ -69,18 +69,9 @@ export const FollowPointer = ({
   y: any;
   title?: string | React.ReactNode;
 }) => {
-  const colors = [
-    "var(--sky-500)",
-    "var(--neutral-500)",
-    "var(--teal-500)",
-    "var(--green-500)",
-    "var(--blue-500)",
-    "var(--red-500)",
-    "var(--yellow-500)",
-  ];
   return (
     <motion.div
-      className="h-4 w-4 rounded-full absolute z-[500]"
+      className="h-4 w-4 rounded-full absolute z-[500] invisible lg:visible"
       style={{
         top: y,
         left: x,
