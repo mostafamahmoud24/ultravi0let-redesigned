@@ -12,8 +12,9 @@ const Overlay = styled(motion.div)`
   background: rgba(0, 0, 0, 0.5);
   z-index: 100;
 `;
-const ModalContainer = styled(motion.div)`
-  background-color: white;
+const ModalContainer = styled(motion.div).attrs((props) => ({
+  className: props.className,
+}))`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,9 +62,12 @@ const Modal = ({
           animate={"isOpen"}
           exit={"exit"}
           variants={modalVariant}
-          className="dark:bg-black"
         >
-          <ModalContainer variants={containerVariant} ref={modalRef}>
+          <ModalContainer
+            variants={containerVariant}
+            ref={modalRef}
+            className="bg-white dark:bg-black"
+          >
             <CloseButton
               onClick={handleClose}
               xmlns="http://www.w3.org/2000/svg"
