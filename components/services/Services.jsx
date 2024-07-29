@@ -21,7 +21,7 @@ export const cards = [
   {
     title: "Development",
     description:
-      "Weather it's for the web or mobile devices we've got you covered with scalable software to meet all your needs.",
+      "Whether it's for the web or mobile devices we've got you covered with scalable software to meet all your needs.",
     icon: <IconTerminal2 />,
   },
   {
